@@ -1,0 +1,112 @@
+#hero {
+  justify-content: center;
+
+  #hero-img-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    height: 59.25rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 6rem;
+
+    & > img {
+      overflow: hidden;
+      position: absolute;
+      bottom: 0;
+      left: -7.5%;
+      z-index: -1;
+      height: 100%;
+      width: 115%;
+    }
+    & nav {
+      margin: 3.5rem 10rem;
+
+      display: flex;
+      justify-content: space-between;
+  
+      & #logo {
+        & img {
+          width: 14.375rem;
+          height: 3.625rem;
+        }
+        & img:nth-child(2) {
+          display: none;
+        }
+      }
+  
+      & button {
+        align-self: center;
+        background-color: var(--pink-dark);
+        color: var(--txt-color-title);
+        font: var(--txt-button);
+        
+        border: none;
+        border-radius: .5rem;
+        width: 5.5625rem;
+        height: 2.5rem;
+      }
+    }
+  
+    & #title {
+      margin-inline: 15rem;
+      text-align: center;
+
+      & h1 {
+        margin-block: 2rem;
+        color: var(--txt-color-title);
+        font: var(--txt-title-lg);
+      }
+      & p {
+        padding-inline: 2.75rem;
+        color: var(--txt-color-body);
+        font: var(--txt-body-lg);
+      }
+    }
+  }
+
+  & #subtitle {
+    margin-inline: 7.5rem;
+    padding: 7.125rem 2rem 9.875rem;
+
+    text-align: center;
+    font: var(--txt-subtitle);
+    color: var(--txt-color-body);
+
+    position: relative;
+
+    & strong {
+      color: var(--blue-light);
+    }
+
+    & img {
+      position: absolute;
+    }
+
+    /* spell book */
+    & img:nth-child(1) {
+      top: 2rem;
+      right: auto;
+      height: 5.5rem;
+      aspect-ratio: 1/1;
+      transform: rotateZ(20.76deg);
+    }
+    /* uoija planchette */
+    & img:nth-child(2) {
+      bottom: 6rem;
+      left: 0;
+      height: 5rem;
+      aspect-ratio: 1/1;
+      transform: rotateZ(99.47deg);
+    }
+
+    /* crystall ball */
+    & img:nth-child(3) {
+      bottom: 6rem;
+      right: 0;
+      height: 4.5rem;
+      aspect-ratio: 1/1;
+      transform: rotateZ(-14.48deg);
+    }
+  }
+}

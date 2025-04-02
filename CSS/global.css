@@ -44,3 +44,7 @@
   --txt-link: 500 0.875rem var(--ff);
   --txt-tag: 700 0.625rem var(--ff);
 }
+
+body {
+  background-color: var(--shape-background);
+}
