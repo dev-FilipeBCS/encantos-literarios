@@ -1,0 +1,101 @@
+#kit {
+  justify-items: center;
+
+  & > header {
+    & div{
+      display: flex;
+      gap: 1rem;
+      & h2{
+        font: var(--txt-title-sm);
+        color: var(--txt-color-title);
+      }
+    }
+    & p {
+      margin-top: .3125rem;
+      text-align: center;
+      font: var(--txt-body-md);
+      color: var(--txt-color-body);
+    }
+  }
+
+  & #book-animation {
+    aspect-ratio: 1440/920 ;
+    width: 100%;
+    padding-block: 8.375rem;
+
+    position: relative;
+    
+    & p {
+      position: absolute;
+      text-align: center;
+      font: var(--txt-body-md);
+      color: var(--txt-color-title);
+    }
+
+    & img {
+      position: absolute;
+    }
+    /* Book */
+    & img:nth-child(1) {
+      z-index: 1;
+      width: 32.4%;
+      left: 50%;
+      bottom: 50%;
+      transform: translateY(50%) translateX(-57%);
+    }
+    & img:nth-child(2){
+      width: 12.15%;
+      bottom: 74%;
+      left: 22.2%;
+    }
+    & p:nth-child(8){
+      width: 15.5%;
+      bottom: 78%;
+      left: 14.5%;
+    }
+
+    /* Pin */
+    & img:nth-child(3){
+      width: 15.41%;
+      bottom: 20%;
+      left: 22%;
+      transform: rotateZ(-8deg);
+    }
+    & img:nth-child(4){
+      width: 7.29%;
+      bottom: 41%;
+      left: 22%;
+    }
+    & p:nth-child(9){
+      width: 8.75%;
+      bottom: 52%;
+      left: 21%;
+    }
+
+    /* Book marks */
+    & img:nth-child(5){
+      width: 11.94%;
+      bottom: 31%;
+      left: 67%;
+      transform: rotateZ(22deg);
+    }
+    /* Purple */
+    & img:nth-child(6){
+      width: 11.94%;
+      bottom: 38%;
+      left: 60%;
+      transform: rotateZ(12deg);
+    }
+    /* Yellow */
+    & img:nth-child(7){
+      width: 10%;
+      bottom: 21%;
+      left: 65%;
+    }
+    & p:nth-child(10){
+      width: 15.5%;
+      top: 80%;
+      left: 57%;
+    }
+  }
+}
