@@ -1,0 +1,125 @@
+#price {
+  aspect-ratio: 1440/1234;
+  justify-items: center;
+  background-image: url(../assets/pricing-background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  & > header {
+    justify-items: center;
+    margin-bottom: 8.625rem;
+
+    & p {
+      font: var(--txt-title-sm);
+      color: var(--txt-color-title);
+    }
+  }
+
+  & #price-wrapper{
+    position: relative;
+    width: 100%;
+    min-height: 20rem;
+    
+    & > div {
+      display: flex;
+      flex-direction: column;
+      border-radius: 1.5rem;
+      background-color: var(--shape-base);
+      border: 1px solid var(--shape-stroke);
+      position: absolute;
+      left: 50%;
+      justify-content: space-between;
+      height: 26rem;
+
+      padding: 2rem;
+
+      & h1{
+        font: var(--txt-title-xs);
+        margin-bottom: 1.5rem;
+        width: 100%;
+        text-align: left;
+
+        display: flex;
+        justify-content: space-between;
+        
+        & span {
+          font: var(--txt-tag);
+          color: var(--txt-color-body);
+          padding: .5rem 1.25rem;
+          border-radius: 999px;
+          background-color: var(--shape-stroke);
+          transform: translateY(-.5rem);
+        }
+      }
+      & h2 {
+        font: var(--txt-title-md);
+        color: var(--txt-color-title);
+        margin-bottom: .5rem;
+        & small {
+          font: var(--txt-title-xs);
+        }
+      }
+      & h3 {
+        font: var(--txt-body-sm);
+        color: var(--txt-color-label);
+      }
+
+      & ul {
+        list-style: none;
+        font: var(--txt-body-xs);
+        color: var(--txt-color-body);
+        margin-bottom: 1.5rem;
+
+        & li {
+          display: flex;
+          align-items: center;
+          gap: .5rem;
+          margin-bottom: .75rem;
+
+          & img {
+            height: 0.875rem;
+            aspect-ratio: 1/1;
+          }
+        }
+      }
+
+      & button {
+        font: var(--txt-button);
+        color: var(--txt-color-title);
+        padding-block: .75rem;
+        width: 14rem;
+
+        border-radius: .5rem;
+        border: none;
+      }
+    }
+
+    & #mensal, #annual{
+      & h1 {
+        color: var(--blue-light);
+      }
+      & button {
+        background-color: var(--blue-dark);
+      }
+    }
+
+    & #mensal {
+      transform: translateY(3rem) translateX(-150%) rotate(-8deg);
+    }
+    & #annual {
+      transform: translateY(3rem) translateX(50%) rotate(8deg) ;
+    }
+
+    & #semestral {
+      z-index: 1;
+      transform: translateX(-50%);
+
+      & h1 {
+        color: var(--pink-light);
+      }
+      & button {
+        background-color: var(--pink-dark);
+      }
+    }
+  }
+}
