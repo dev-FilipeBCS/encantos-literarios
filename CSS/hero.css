@@ -18,7 +18,10 @@
       z-index: -1;
       height: 100%;
       width: 115%;
+      opacity: 0;
+      animation: appear 3s 100ms forwards;
     }
+
     & nav {
       margin: 3.5rem 10rem;
 
@@ -56,11 +59,15 @@
         margin-block: 2rem;
         color: var(--txt-color-title);
         font: var(--txt-title-lg);
+        opacity: 0;
+        animation: appear 2s 500ms forwards;
       }
       & p {
         padding-inline: 2.75rem;
         color: var(--txt-color-body);
         font: var(--txt-body-lg);
+        opacity: 0;
+        animation: appear 3s 1.2s forwards;
       }
     }
   }
@@ -71,8 +78,7 @@
 
     text-align: center;
     font: var(--txt-subtitle);
-    color: var(--txt-color-body);
-
+    
     position: relative;
 
     & strong {
@@ -81,32 +87,115 @@
 
     & img {
       position: absolute;
+      /* spell book */
+      &:nth-child(1) {
+        top: 2rem;
+        right: auto;
+        height: 5.5rem;
+        aspect-ratio: 1/1;
+        transform: rotateZ(20.76deg);
+
+        animation: unshrink linear forwards;
+        animation-timeline: view();
+        animation-range: 0px 350px;
+      }
+      /* uoija planchette */
+      &:nth-child(2) {
+        bottom: 6rem;
+        left: 0;
+        height: 5rem;
+        aspect-ratio: 1/1;
+        transform: rotateZ(99.47deg);
+
+        animation: unshrink linear both;
+        animation-timeline: view();
+        animation-range: 0px 150px;
+      }
+  
+      /* crystall ball */
+      &:nth-child(3) {
+        bottom: 6rem;
+        right: 0;
+        height: 4.5rem;
+        aspect-ratio: 1/1;
+        transform: rotateZ(-14.48deg);
+
+        animation: unshrink linear both;
+        animation-timeline: view();
+        animation-range: 150px 300px;
+      }
     }
 
-    /* spell book */
-    & img:nth-child(1) {
-      top: 2rem;
-      right: auto;
-      height: 5.5rem;
-      aspect-ratio: 1/1;
-      transform: rotateZ(20.76deg);
-    }
-    /* uoija planchette */
-    & img:nth-child(2) {
-      bottom: 6rem;
-      left: 0;
-      height: 5rem;
-      aspect-ratio: 1/1;
-      transform: rotateZ(99.47deg);
-    }
+    & span {
+      &:nth-child(1){
+        animation: text-color linear both;
+        animation-timeline: view();
+        animation-range: 200px 400px;
 
-    /* crystall ball */
-    & img:nth-child(3) {
-      bottom: 6rem;
-      right: 0;
-      height: 4.5rem;
-      aspect-ratio: 1/1;
-      transform: rotateZ(-14.48deg);
+        & strong {
+          animation: text-strong linear both;
+          animation-timeline: view();
+          animation-range: 200px 400px;
+        }
+      }
+
+      &:nth-child(2){
+        animation: text-color linear both;
+        animation-timeline: view();
+        animation-range: 300px 500px;
+
+        & strong {
+          animation: text-strong linear both;
+          animation-timeline: view();
+          animation-range: 300px 500px;
+        }
+      }
+
+      &:nth-child(3){
+        animation: text-color linear both;
+        animation-timeline: view();
+        animation-range: 400px 600px;
+
+        & strong {
+          animation: text-strong linear both;
+          animation-timeline: view();
+          animation-range: 400px 600px;
+        }
+      }
     }
+  }
+}
+
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes text-color {
+  from {
+    color: grey;
+  }
+  to {
+    color: var(--txt-color-body);
+  }
+}
+
+@keyframes text-strong {
+  from {
+    color: grey;
+  }
+  to {
+    color: var(--blue-light);
+  }
+}
+
+@keyframes unshrink {
+  from {
+    transform: scale(0.4) rotate(270deg);
+  }
+  to  {
+    transform: scale(1) rotate(0deg);
   }
 }
