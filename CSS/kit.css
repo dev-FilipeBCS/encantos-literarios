@@ -21,10 +21,10 @@
   & #book-animation {
     aspect-ratio: 1440/920 ;
     width: 100%;
-    padding-block: 8.375rem;
+    margin: 7rem;
 
     position: relative;
-    
+
     & p {
       position: absolute;
       text-align: center;
@@ -38,10 +38,6 @@
 
     /* Book */
     & div:nth-child(1) {
-      animation: flyOut-top-left linear both;
-      animation-timeline: view();
-      animation-range: 150px 300px;
-
       & img:nth-child(1) {
         z-index: 1;
         width: 32.4%;
@@ -51,13 +47,15 @@
       }
       & img:nth-child(2){
         width: 12.15%;
-        bottom: 74%;
-        left: 22.2%;
+        left: 50%;
+        bottom: 50%;
+        transition: left 1s, bottom 1s;
       }
       & p:nth-child(3){
         width: 15.5%;
-        bottom: 78%;
-        left: 14.5%;
+        left: 50%;
+        bottom: 50%;
+        transition: transform 1s, left 1s, bottom 1s;
       }
     }
 
@@ -65,47 +63,115 @@
     & div:nth-child(2) {
       & img:nth-child(1){
         width: 15.41%;
+        left: 40%;
+        bottom: 15%;
+        transition: transform 1s, left 1s, bottom 1s;
+      }
+      & img:nth-child(2){
+        width: 7.29%;
+        left: 40%;
+        bottom: 40%;
+        transition: left 1s, bottom 1s;
+      }
+      & p:nth-child(3){
+        width: 8.75%;
+        left: 40%;
+        bottom: 53%;
+        transition: left 1s, bottom 1s;
+      }
+    }
+
+    /* Book marks */
+    & div:nth-child(3) {
+      /* Purple */
+      & img:nth-child(1){
+        width: 11.94%;
+        left: 50%;
+        bottom: 18%;
+        transition: transform 1s, left 1s, bottom 1s;
+      }
+      /* Yellow */
+      & img:nth-child(2){
+        width: 11.94%;
+        left: 50%;
         bottom: 20%;
+        transition: transform 1s, left 1s, bottom 1s;
+      }
+
+      & img:nth-child(3){
+        width: 10%;
+        left: 40%;
+        bottom: 20%;
+        transition: left 1s, bottom 1s;
+      }
+      & p:nth-child(4){
+        z-index: -1;
+        width: 15.5%;
+        left: 50%;
+        top: 70%;
+        transition: left 1s, top 1s;
+      }
+    }
+  }
+
+  & #book-animation:hover {
+
+    /* Book */
+    & div:nth-child(1) {
+      & img:nth-child(1) {
+        left: 50%;
+        bottom: 50%;
+        transform: translateY(50%) translateX(-57%);
+      }
+      & img:nth-child(2){
+        bottom: 82%;
+        left: 22.2%;
+      }
+      & p:nth-child(3){
+        bottom: 86%;
+        left: 14.5%;
+      }
+    }
+
+    /* Pin */
+    & div:nth-child(2) {
+      & img:nth-child(1){
+        bottom: 10%;
         left: 22%;
         transform: rotateZ(-8deg);
       }
       & img:nth-child(2){
-        width: 7.29%;
-        bottom: 41%;
+        bottom: 38%;
         left: 22%;
       }
       & p:nth-child(3){
-        width: 8.75%;
-        bottom: 52%;
+        bottom: 53%;
         left: 21%;
       }
     }
 
     /* Book marks */
     & div:nth-child(3) {
+      /* Purple */
       & img:nth-child(1){
-        width: 11.94%;
-        bottom: 31%;
+        bottom: 30%;
         left: 67%;
         transform: rotateZ(22deg);
       }
-      /* Purple */
+      /* Yellow */
       & img:nth-child(2){
-        width: 11.94%;
-        bottom: 38%;
+        bottom: 39%;
         left: 60%;
         transform: rotateZ(12deg);
       }
-      /* Yellow */
+
       & img:nth-child(3){
-        width: 10%;
-        bottom: 21%;
-        left: 65%;
+        bottom: 20%;
+        left: 66%;
       }
       & p:nth-child(4){
-        width: 15.5%;
-        top: 80%;
-        left: 57%;
+        top: 82%;
+        left: 59%;
       }
     }
   }
