@@ -21,17 +21,39 @@
     min-height: 20rem;
     
     & > div {
-      display: flex;
-      flex-direction: column;
-      border-radius: 1.5rem;
-      background-color: var(--shape-base);
-      border: 1px solid var(--shape-stroke);
-      position: absolute;
       left: 50%;
-      justify-content: space-between;
-      height: 26rem;
+      position: absolute;
+      padding: 10px;
+      border-radius: 1.5rem;
 
-      padding: 2rem;
+      & div {
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.5rem;
+        background-color: var(--shape-base);
+        border: 1px solid var(--shape-stroke);
+        justify-content: space-between;
+        height: 26rem;
+  
+        padding: 2rem;
+
+        transition: all 800ms;
+      }
+
+      & div:hover {
+        transform: translateY(-5%);
+        z-index: 999;
+        background-color: var(--shape-hover);
+
+        &#mensal:hover, &#annual:hover {
+          & > img:nth-last-child(1) {      
+            transform: rotate(60deg);
+          }
+          & > img:nth-last-child(2) {
+            transform: rotate(-60deg);
+          }
+        }
+      }
 
       & h1{
         font: var(--txt-title-xs);
@@ -88,9 +110,28 @@
         color: var(--txt-color-title);
         padding-block: .75rem;
         width: 14rem;
+        overflow: hidden;
 
         border-radius: .5rem;
         border: none;
+
+        position: relative;
+        & img {
+          z-index: 1;
+          transition: all 1s;
+          position: absolute;
+          opacity: 0.15;
+          bottom:0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: scale(0);
+        }
+        &:hover {
+          & img {
+            transform: scale(2);
+          }
+        }
       }
     }
 
@@ -103,16 +144,56 @@
       }
     }
 
+    & #annual-wrappers, & #mensal-wrapper {
+      & div {
+        position: relative
+      }
+    }
     & #mensal {
-      transform: translateY(3rem) translateX(-150%) rotate(-8deg);
+      & > img:nth-last-child(1) { 
+        transition: all 1s;     
+        position: absolute;
+        width: 1.625rem;
+        bottom: 95%;
+        right: 102%;
+      }
+      & > img:nth-last-child(2) {
+        transition: all 1s;     
+        position: absolute;
+        width: 0.8125rem;
+        bottom: 102%;
+        right: 96%;
+      }
     }
     & #annual {
-      transform: translateY(3rem) translateX(50%) rotate(8deg) ;
+      & > img:nth-last-child(1) {
+        transition: all 1s;     
+        position: absolute;
+        width: 1.625rem;
+        top: 95%;
+        left: 102%;
+      }
+      & > img:nth-last-child(2) {
+        transition: all 1s;     
+        position: absolute;
+        width: 0.8125rem;
+        top: 102%;
+        left: 96%;
+      }
     }
 
-    & #semestral {
+
+    & #semestral-wrapper {
       z-index: 1;
       transform: translateX(-50%);
+      & div{
+        position: relative;
+        & > img:nth-last-child(1) {
+          position: absolute;
+          bottom: 100%;
+          left: 10%;
+        }
+      }
 
       & h1 {
         color: var(--pink-light);
@@ -121,5 +202,20 @@
         background-color: var(--pink-dark);
       }
     }
+  }
+
+  & .mensal-rotate, & .annual-rotate {
+    position: absolute;
+    transition: transform 1s;
+    transform: translateX(-50%);
+  }
+}
+
+#price:hover {
+  & .mensal-rotate{
+    transform: translateY(3rem) translateX(-150%) rotate(-8deg);
+  }
+  & .annual-rotate {
+    transform: translateY(3rem) translateX(50%) rotate(8deg);
   }
 }
